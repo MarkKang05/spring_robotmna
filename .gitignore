@@ -38,3 +38,6 @@ out/
 
 ### too much css ###
 *.css
+
+### application.properies
+src/main/resources/application.properties
