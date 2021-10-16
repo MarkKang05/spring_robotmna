@@ -4,6 +4,7 @@ import com.study.robotmna.model.RoleType;
 import com.study.robotmna.model.User;
 import com.study.robotmna.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -44,7 +45,18 @@ public class DummyControllerTest {
         user.setEmail(requestUser.getEmail());
 
         userRepository.save(user);
-        return null;
+        return user;
+
+    }
+
+    @DeleteMapping("/dummy/user/{id}")
+    public String delete(@PathVariable int id){
+        try {
+            userRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException e){
+            return "삭제 실팽 id x";
+        }
+        return "삭제 되었습니다." + id;
 
     }
 
