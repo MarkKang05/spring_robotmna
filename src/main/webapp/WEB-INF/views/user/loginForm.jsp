@@ -6,7 +6,7 @@
 
 <div class="flex justify-center">
     <div class="w-full max-w-md mt-32 mx-3">
-        <form class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4" action="#" method="POST">
+        <form class="bg-white shadow-md rounded-lg px-8 pt-6 pb-8 mb-4" action="/auth/loginProc" method="POST">
             <div>
                 <p class="text-3xl mb-8 font-semibold">
                     Log in
